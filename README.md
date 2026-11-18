@@ -30,9 +30,9 @@ Total compute is about 20 minutes (most of it the Go2 training); the rest is rea
 ## Quickstart
 
 ```bash
-git clone <this repository's URL> isaaclab-newton-tutorials
+git clone https://github.com/andresdiazaguilar/isaaclab-newton-tutorials
 cd isaaclab-newton-tutorials
-./install.sh          # uv + Isaac Lab (tested commit) + Python environment, ~10-15 min the first time
+./install.sh          # uv + Isaac Lab + Python environment
 ./start_jupyter.sh    # then open the printed http://localhost:8888/... link and 01_first_policy.ipynb
 ```
 
@@ -41,18 +41,18 @@ tutorial was tested with, because Isaac Lab's main branch changes quickly.
 
 ## Drive a trained robot with your keyboard
 
-A Go2 policy trained with this notebook (1000 PPO iterations, 1 MB) is included, so you can try this right away:
+A simple Go2 policy trained with this notebook (1000 PPO iterations, 1 MB) is included, so you can try this immediately:
 
 ```bash
 ./run.sh python scripts/drive_policy.py --task Isaac-Velocity-Flat-UnitreeGo2 --checkpoint checkpoints/go2_flat_model_999.pt
 ```
 
-After notebook 1, drive **your own** Go2 instead with `--checkpoint logs/go2_flat`.
-Click into the viewer window, then: **W/S** forward/backward, **A/D** sideways, **Q/E** turn, **Space** stop,
+After notebook 1, drive the Go2 with your own policy  instead with `--checkpoint logs/go2_flat`.
+Click into the viewer window, then: **W/S** forward/backward, **A/D** sideways, **Q/E** turn left/right, **Space** stop,
 **R** reset, **C** toggle the follow camera.
 
 `drive_policy.py` works for any registered task and RSL-RL checkpoint (`--task`, `--num_envs`, `--speed`, ...;
-see the top of the file). [`scripts/drive_go2.py`](scripts/drive_go2.py) is a minimal Go2-only version that's easier to read.
+see the top of the file). 
 
 ## Repository layout
 
@@ -82,6 +82,23 @@ logs/, videos/          created when you run things (not tracked by git)
 Isaac Lab `3e7e613` (main, 2026-11-16, v3.0.0), Newton/MJWarp physics, RSL-RL 5.5.1, PyTorch with CUDA,
 Ubuntu 24.04 on WSL2, NVIDIA RTX 5070 Laptop GPU (driver 621.24).
 
+## About this repository
+
+I made this repository to guide myself through learning Isaac Lab while being able to run it locally (given a beefy enough laptop), and I'm sharing it in case it helps others starting out the same way. The material draws on:
+
+- Isaac Lab's official Newton notebooks (`notebooks/explore.ipynb` and `notebooks/training.ipynb` in the
+  [Isaac Lab repository](https://github.com/isaac-sim/IsaacLab))
+- Isaac Lab's own task code, in particular the cartpole Direct task and the Go2 velocity-tracking task, which
+  the notebook's cartpole environment and Go2 sections are based on,
+- the [Isaac Lab documentation](https://isaac-sim.github.io/IsaacLab/) and [RSL-RL](https://github.com/leggedrobotics/rsl_rl),
+- the PPO and GAE papers ([Schulman et al., 2017](https://arxiv.org/abs/1707.06347);
+  [Schulman et al., 2015](https://arxiv.org/abs/1506.02438)) for the theory parts, and
+  [Rudin et al., 2021](https://arxiv.org/abs/2109.11978) (*Learning to Walk in Minutes*), the origin of RSL-RL
+  and of Isaac Lab's locomotion tasks.
+
+The explanations, experiments (reward hacking, the standing-still local optimum), helper scripts and installation
+were written for this tutorial and tested on the setup listed above. It was built with the assistance of Claude Code.
+
 ## License
 
-[BSD-3-Clause](LICENSE), like Isaac Lab. This repository only uses Isaac Lab and RSL-RL; it doesn't contain their code.
+[BSD-3-Clause](LICENSE). This repository only uses Isaac Lab and RSL-RL; it doesn't contain their code.
