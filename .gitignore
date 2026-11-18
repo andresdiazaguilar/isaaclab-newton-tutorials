@@ -1,0 +1,17 @@
+# Isaac Lab checkout created by install.sh
+/IsaacLab/
+
+# outputs of the notebook and of ./run.sh isaaclab train / play
+logs/
+videos/
+outputs/
+
+# training checkpoints anywhere except the bundled ones
+*.pt
+!checkpoints/*.pt
+
+# Python / Jupyter
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.venv/
