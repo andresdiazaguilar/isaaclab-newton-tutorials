@@ -1,6 +1,6 @@
 # Your first RL policy in Isaac Lab
 
-<p align="center"><img src="media/go2_walk.gif" width="400" alt="A Unitree Go2 walking, trained in this tutorial"></p>
+<p align="center"><img src="media/go2_demo.gif" width="480" alt="A Unitree Go2 trained in this tutorial, following velocity commands: forward, forward while turning, sideways"></p>
 
 A hands-on, single-notebook introduction to robot learning with **[Isaac Lab](https://github.com/isaac-sim/IsaacLab) 3.0**
 on the **Newton** physics engine. No Isaac Sim needed, runs on a laptop GPU (tested on an RTX 5070 Laptop, 8 GB).
