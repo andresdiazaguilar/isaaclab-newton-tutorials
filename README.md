@@ -2,9 +2,7 @@
 
 <p align="center"><img src="media/go2_demo.gif" width="480" alt="A Unitree Go2 trained in this tutorial, following velocity commands: forward, forward while turning, sideways"></p>
 
-A hands-on, single-notebook introduction to robot learning with **[Isaac Lab](https://github.com/isaac-sim/IsaacLab) 3.0**
-on the **Newton** physics engine. No Isaac Sim needed, runs on a laptop GPU (tested on an RTX 5070 Laptop, 8 GB).
-Made to help those who have some basic knowledge of RL to start writing, training, debugging and explaining their own RL tasks.
+A hands-on, notebook introduction to robot learning with **[Isaac Lab](https://github.com/isaac-sim/IsaacLab) 3.0**. Runs on a (powerful enough) laptop (tested on an RTX 5070 Laptop, 8 GB) thanks to the use of the new lightweight **Newton** physics engine. As such, no Isaac Sim is needed to run this tutorial. Made to help those who have some basic knowledge of RL to start writing, training, and debugging their own RL tasks.
 
 ## What you'll learn
 
@@ -84,13 +82,17 @@ Ubuntu 24.04 on WSL2, NVIDIA RTX 5070 Laptop GPU (driver 621.24).
 
 ## About this repository
 
-I made this repository to guide myself through learning Isaac Lab while being able to run it locally (given a beefy enough laptop), and I'm sharing it in case it helps others starting out the same way. The material draws on:
+I made this repository to guide myself through learning Isaac Lab while being able to run it locally (given a beefy enough laptop), since most tutorials out there were made with Isaac Lab in mind. I'm sharing it in case it can helps others starting out the same way. The material draws on:
 
 - Isaac Lab's official Newton notebooks (`notebooks/explore.ipynb` and `notebooks/training.ipynb` in the
-  [Isaac Lab repository](https://github.com/isaac-sim/IsaacLab))
+  [Isaac Lab repository](https://github.com/isaac-sim/IsaacLab)),
 - Isaac Lab's own task code, in particular the cartpole Direct task and the Go2 velocity-tracking task, which
   the notebook's cartpole environment and Go2 sections are based on,
-- the [Isaac Lab documentation](https://isaac-sim.github.io/IsaacLab/) and [RSL-RL](https://github.com/leggedrobotics/rsl_rl),
+- the [Isaac Lab documentation](https://isaac-sim.github.io/IsaacLab/),
+- the [RSL-RL](https://github.com/leggedrobotics/rsl_rl) library (ETH Zurich's Robotic Systems Lab), which does all
+  the training here: its PPO implementation and `OnPolicyRunner` (actor-critic networks, rollouts, updates, logging,
+  checkpoints) are what the notebook's `train()` helper and the driving scripts call, and the PPO hyperparameters
+  explained in Part 2 are its configuration options,
 - the PPO and GAE papers ([Schulman et al., 2017](https://arxiv.org/abs/1707.06347);
   [Schulman et al., 2015](https://arxiv.org/abs/1506.02438)) for the theory parts, and
   [Rudin et al., 2021](https://arxiv.org/abs/2109.11978) (*Learning to Walk in Minutes*), the origin of RSL-RL
