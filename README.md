@@ -3,25 +3,23 @@
 <p align="center"><img src="media/go2_walk.gif" width="400" alt="A Unitree Go2 walking, trained in this tutorial"></p>
 
 A hands-on, single-notebook introduction to robot learning with **[Isaac Lab](https://github.com/isaac-sim/IsaacLab) 3.0**
-on the **Newton** physics engine: no Isaac Sim needed, runs on a laptop GPU (tested on an RTX 5070 Laptop, 8 GB).
-You go from *"I studied PPO a while ago"* to writing, training, debugging and explaining your own RL tasks,
-and end by **driving the quadruped you trained with your keyboard**.
+on the **Newton** physics engine. No Isaac Sim needed, runs on a laptop GPU (tested on an RTX 5070 Laptop, 8 GB).
+Made to help those who have some basic knowledge of RL to start writing, training, debugging and explaining their own RL tasks.
 
 ## What you'll learn
 
 | Part | Topic |
 |---|---|
 | 0 | Setup |
-| 1 | RL refresher: MDPs, returns, value functions, advantages |
-| 2 | PPO step by step: policy gradient, actor-critic, GAE, the clipped objective (with small code demos) |
+| 1,2 | RL refresher: MDPs, value functions, PPO recap |
 | 3 | Isaac Lab basics: scenes, assets, joints, the simulation loop, batched GPU tensors |
-| 4 | **Your own task** (cartpole, Direct workflow): observations, actions, rewards, terminations, resets; PPO training; reading training curves; a **reward-hacking** experiment |
+| 4 | Your first task (cartpole, Direct workflow): observations, actions, rewards, terminations, resets; PPO training; reading training curves; a reward-hacking experiment |
 | 5 | Manager-based workflow: train a **Unitree Go2** to walk; reward terms; a **local optimum** and how to diagnose it |
 | 6 | The terminal workflow (`train`, `play`, TensorBoard) |
-| 7 | Recap and interview questions |
+| 7 | Recap and test questions |
 
 Everything runs in the notebook: videos are rendered with a simulated camera and shown under the cells.
-Total compute is about 25 minutes (most of it the Go2 training); the rest is reading.
+Total compute is about 20 minutes (most of it the Go2 training); the rest is reading.
 
 ## Requirements
 
