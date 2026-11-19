@@ -8,4 +8,5 @@ if [ ! -d "$ISAACLAB_DIR/.venv" ]; then
   exit 1
 fi
 cd "$REPO"
-exec uv run --project "$ISAACLAB_DIR" --with jupyterlab --with wurlitzer jupyter lab --no-browser --notebook-dir "$REPO"
+exec uv run --project "$ISAACLAB_DIR" --with-editable "$REPO/parkour" --with jupyterlab --with wurlitzer \
+  jupyter lab --no-browser --notebook-dir "$REPO"

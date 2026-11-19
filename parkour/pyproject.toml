@@ -1,0 +1,17 @@
+[project]
+name = "go2-parkour"
+version = "0.1.0"
+description = "Go2 parkour task for Isaac Lab, built in notebook 02 of isaaclab-newton-tutorials"
+requires-python = ">=3.11"
+
+# This is how the `isaaclab` command-line tool finds tasks that live outside Isaac Lab:
+# it imports every package listed under the "isaaclab.tasks" entry-point group.
+[project.entry-points."isaaclab.tasks"]
+go2_parkour = "go2_parkour"
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["go2_parkour"]

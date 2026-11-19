@@ -50,9 +50,16 @@ from rsl_rl.runners import OnPolicyRunner
 from isaaclab.app import launch_simulation
 from isaaclab.utils import to_dict
 
-import isaaclab_tasks  # noqa: F401  (registers all tasks with gym)
+import isaaclab_tasks  # noqa: F401  (registers Isaac Lab's own tasks with gym)
 from isaaclab_rl.rsl_rl import RslRlVecEnvWrapper
 from isaaclab_tasks.utils.hydra import resolve_task_config
+
+# Also register tasks from other packages (e.g. Go2-Parkour from ./parkour), the same way the `isaaclab`
+# command does: import every package declared under the "isaaclab.tasks" entry-point group.
+import importlib.metadata
+
+for entry_point in importlib.metadata.entry_points(group="isaaclab.tasks"):
+    entry_point.load()
 
 REPO = Path(__file__).resolve().parent.parent
 ISAACLAB_DIR = os.environ.get("ISAACLAB_DIR", "")  # set by run.sh
