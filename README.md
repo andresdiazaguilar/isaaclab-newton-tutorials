@@ -6,8 +6,8 @@ A hands-on, notebook introduction to robot learning with **[Isaac Lab](https://g
 
 | Notebook 1: walking | Notebook 2: parkour |
 |---|---|
-| <img src="media/go2_demo.gif" width="400" alt="A Unitree Go2 following velocity commands: forward, forward while turning, sideways"> | <img src="media/go2_parkour.gif" width="400" alt="A Unitree Go2 dropping into a 29 cm pit, turning, and climbing out over the wall at an angle"> |
-| A Go2 following velocity commands on flat ground: forward, turning, sideways. 1000 PPO iterations, ~13 min of training. | A Go2 dropping into a 29 cm pit, turning, and climbing out over the wall at an angle. 3000 PPO iterations, ~1 h of training. |
+| <img src="media/go2_demo.gif" width="400" alt="A Unitree Go2 following velocity commands: forward, forward while turning, sideways"> | <img src="media/go2_parkour.gif" width="400" alt="A Unitree Go2 running a parkour course: two gaps, a pit, a gap up onto a step and a gap back down"> |
+| A Go2 following velocity commands on flat ground: forward, turning, sideways. 1000 PPO iterations, ~13 min of training. | A Go2 running a parkour course: 35 and 40 cm gaps, into and out of a 25 cm pit, a 30 cm gap up a 12 cm step and a 35 cm gap down. It only trained on one obstacle at a time, never on a course. 3000 PPO iterations, ~1 h of training. |
 
 Success rate of the parkour policy at the hardest obstacle size of each type, and averaged over all 10 difficulty
 levels (`checkpoints/go2_parkour_model_2999.pt`, 16 robots per tile, walking straight at 0.8 m/s):
